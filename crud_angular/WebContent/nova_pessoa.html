@@ -1,0 +1,93 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- <label>Id Pessoa</label>
+
+<input type="text" class="form-control" value="{{pessoa.id}}"></input>
+ -->
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate class="css-form">
+	<input type="hidden" ng-model="pessoa.endereco.bairro.id"
+		id="bairro_id" />
+	<div class="form-group">
+
+		
+				
+		</div>
+		<div class="form-group col-md-6">
+			<label>Centro de Custo</label>
+			<select ng-model="centro" class="form-control">
+				<option ng-repeat="opcao in centros" value="{{opcao.id}}">{{opcao.nome}}</option>	
+			</select>
+			
+		</div>
+		<div class="form-group col-md-6">
+			<label>Centro Selecionado</label>
+			<input type="text" class="form-control" readonly="readonly" value="{{centro}}">
+		</div>
+		<div class="form-group col-md-2">
+			<label>Tipo Pessoa</label>
+			<select ng-model="tp_pessoa.dado" class="form-control">
+				<option ng-repeat="opcao in tp_pessoa.opcoes" value="{{opcao.id}}">{{opcao.valor}}</option>	
+			</select>
+			
+		</div>
+		<div class="form-group-inline col-md-7">
+			<label>Nome Pessoa</label> <input type="text" class="form-control"
+		ng-class="{'invalido': form.$submitted && form.nome.$invalid}"	
+				ng-model="pessoa.nome" name="nome" required></input>
+				<div ng-show="form.$submitted || form.nome.$touched">
+      <div ng-show="form.nome.$error.required">Informe o nome</div>
+    </div>
+		</div>
+		<div class="form-group col-md-3">
+			<label>Cpf Cnpj</label> <input type="text" class="form-control" required name="cpf"
+			ng-class="{'invalido': form.$submitted && form.nome.$invalid}"
+				ng-model="pessoa.cpfcnpj"></input>
+		</div>
+		<div class="form-group col-md-2">
+			<label>CEP</label> <input type="text" class="form-control"
+			ng-blur="buscaCep()"
+				ng-model="pessoa.endereco.cep" value="{{pessoa.endereco.cep}}"></input>
+		</div>
+		<div class="form-group col-md-7">
+			<label>Logradouro</label> <input type="text" class="form-control"
+				readonly="readonly"
+				value="{{cep.nmlogradouro}}"></input>
+		</div>
+		<div class="form-group col-md-3">
+			<label>Número</label> <input type="text" class="form-control"
+				ng-model="pessoa.endereco.numero" value="{{pessoa.endereco.numero}}"></input>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="bairro">Bairro</label>
+
+			<!-- 
+	<input type="text" class="form-control" 
+	ng-keyup="pesquisar(search)" ng-model="search" class="form-control input-lg" placeholder="O que você procura?" autofocus autocomplete="on"
+		value="{{pessoa.endereco.bairro.nome}}"></input> 
+		<div class="autocomplete" ng-show="completing" id="autocomplete">
+		<ul ng-repeat="dica in dicas" class="autocomplete">
+			<li>{{dica.value}}</li>
+		</ul>
+     -->
+			<input type="text" class="form-control"  width="10px"
+			readonly="readonly"
+			 value="{{cep.bairro.nome}}"></input>
+
+		</div>
+	</div>
+	<div class="form-group col-md-4">
+		<label>Cidade</label> <input type="text" class="form-control"
+		readonly="readonly"
+			value="{{cep.cidade.nome}}"></input>
+	</div>
+	<div class="form-group col-md-1">
+		<label>Estado</label> <input type="text" class="form-control"
+		readonly="readonly"
+			 value="{{cep.idUF}}"></input>
+	</div>
+	<div class="form-group col-md-3">
+		<h1></h1>
+		<button type="submit" class="btn btn-success form-control" >Salvar</button>
+	</div>
+	</div>
+</form>

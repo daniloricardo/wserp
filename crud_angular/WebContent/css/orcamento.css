@@ -1,0 +1,73 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+  padding-top: 70px;
+  background: #FFFFFF!IMPORTANT;
+}
+
+.form-signin {
+    width: 650px;
+    margin: auto;
+    padding: 15px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+span.twitter-typeahead {
+	display: block!IMPORTANT;
+}
+
+span.tt-dropdown-menu {border-radius: 5px;
+border: 1px solid lightgray;
+padding: 5px 0;
+background-color: #FCFCFF;
+}
+
+div.tt-suggestion {
+padding: 0 10px;
+}
+
+div.tt-is-under-cursor {
+	background-color: #FCFCFF;
+}
+
+input.tt-hint  {
+	padding: 6px 12px;
+	top: 24px;
+	left: -31px;
+	
+}
+
+element.style{
+	background-color: red!important;	
+}
+.centered{
+    margin: 0 auto;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}

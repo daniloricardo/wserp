@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- <label>Id Pessoa</label>
+
+<input type="text" class="form-control" value="{{pessoa.id}}"></input>
+ -->
+<div ng-controller="loginController"> 
+<form name="form" ng-submit="logar()" novalidate class="css-form" method="post">
+	
+	<label>Login</label> <input type="text" class="form-control"
+		ng-class="{'invalido': form.$submitted && form.nome.$invalid}"	
+				ng-model="login.nome" name="nome" required></input>
+				<div ng-show="form.$submitted || form.nome.$touched">
+      <div ng-show="form.nome.$error.required">Informe o nome</div>
+    </div>
+		
+		
+			<label>Senha</label> <input type="password" class="form-control" required name="cpf"
+			ng-class="{'invalido': form.$submitted && form.nome.$invalid}"
+				ng-model="login.senha"></input>
+		
+		
+		<button type="submit" class="btn btn-success form-control" >Entrar</button>
+		<div class="alert-danger" Style="font-size: 15px; padding: 10px;" ng-show="result">
+					
+					Usuário e/ou Senha incorretos.
+				</div>
+		
+	</form>
+	</div>

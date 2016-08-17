@@ -1,0 +1,71 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- <label>Id Pessoa</label>
+
+<input type="text" class="form-control" value="{{pessoa.id}}"></input>
+ -->
+<input type="hidden" ng-model="pessoa.endereco.bairro.id" id="bairro_id" /> 
+<div class="form-group">
+
+	<div class="form-group col-md-2">
+		<label>Codigo Pessoa</label> <input type="text" class="form-control"
+			value="{{pessoa.codigo}}"></input>
+	</div>
+	<div class="form-group col-md-7">
+		<label>Nome Pessoa</label> <input type="text" class="form-control"
+			ng-model="pessoa.nome"
+			value="{{pessoa.nome}}"></input>
+	</div>
+	<div class="form-group col-md-3">
+		<label>Cpf Cnpj</label> <input type="text" class="form-control"
+			value="{{pessoa.cpfcnpj}}"></input>
+	</div>
+	 <div class="form-group col-md-2">
+	<label>CEP</label> <input type="text" class="form-control"
+	ng-model="pessoa.endereco.cep"
+		value="{{pessoa.endereco.cep}}"></input>
+	</div>
+	 <div class="form-group col-md-7">	
+	 <label>Logradouro</label> <input
+		type="text" class="form-control"
+		value="{{pessoa.endereco.tipo}} {{pessoa.endereco.nome}}"></input>
+		</div>
+		 <div class="form-group col-md-3">	
+	 <label>Número</label> <input
+		type="text" class="form-control"
+		ng-model="pessoa.endereco.numero"
+		value="{{pessoa.endereco.numero}}"></input>
+		</div>
+	 <div class="form-group col-md-4">		
+	<label for="bairro">Bairro</label> 
+	
+	<!-- 
+	<input type="text" class="form-control" 
+	ng-keyup="pesquisar(search)" ng-model="search" class="form-control input-lg" placeholder="O que você procura?" autofocus autocomplete="on"
+		value="{{pessoa.endereco.bairro.nome}}"></input> 
+		<div class="autocomplete" ng-show="completing" id="autocomplete">
+		<ul ng-repeat="dica in dicas" class="autocomplete">
+			<li>{{dica.value}}</li>
+		</ul>
+     -->
+     <input type="text" class="form-control" id="bairro" width="10px"
+     ng-model="pessoa.endereco.bairro.id"></input> 
+      
+  </div>
+	</div>
+	 <div class="form-group col-md-4">		
+		<label>Cidade</label>
+	<input type="text" class="form-control"
+		value="{{pessoa.endereco.cidade.nome}}"></input> 
+	</div>
+	 <div class="form-group col-md-1">		
+	<label>Estado</label>
+	<input type="text" class="form-control"
+	ng-model="pessoa.endereco.uf"
+	 value="{{pessoa.endereco.uf}}"></input>
+	</div>
+	<div class="form-group col-md-3">
+	<h1></h1>
+	<button class="btn btn-success form-control" ng-click="salvar()">Salvar</button>
+	</div>
+</div>

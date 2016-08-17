@@ -1,0 +1,147 @@
+/*$Id$*/
+#body{
+	font-family: calibri;
+	background-color: gray;
+	font-size: 09pt;
+}
+.topo{
+	padding: 5px;
+	height: 10%;
+	font-family: calibri;
+	background-image: ./img/topo_bg.png !important;
+	color: white;
+	font-weight: bolder;
+}
+.imagemproduto{
+	height: 300px;
+	width: 100%;
+	display: block;
+}
+.subtotal{
+	font-family: calibri;
+	background-color: gray;
+	font-size: 24pt;
+	font-weight: bolder;
+	color: white;
+	width: 100%;
+}
+#itens{
+	font-size: 16pt;
+	padding: 5px;
+}
+#fonte{
+	font-size: 9pt;
+}
+.direita{
+	
+	text-align: right;
+}
+.center{
+	
+	text-align: center;
+}
+.topo{
+	background-color: black;
+}
+#autocompleterepresentante{
+	position: fixed;
+	z-index: 99;
+	background-color: #eee;
+}
+#resultadofiltrorepfunc{
+	position: relative;
+	z-index: 1;
+}
+.tabela{
+height: 300px;
+overflow: auto;
+}
+.dados{
+	padding: 5px;
+	width: 100%;
+}
+.dados:hover{
+	background: #428bca;
+	color: white;
+	width: 100%;
+}
+.datepicker {
+    z-index:1051 !important;
+}
+#loading {
+    z-index: 9999;
+}
+h4{
+	background-color:  #eee !important;
+	padding: 5px;
+}
+.vermelho{
+	
+	}
+.azul{
+	color: blue;
+	display: none;
+}
+bs-example{
+	font-family: sans-serif;
+	position: relative;
+	margin: 100px;
+}
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 24px;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 396px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 24px;
+	line-height: 24px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+.rodape{
+	font-weight: bold;
+}
+.positivo{
+	color: green;
+}
+.negativo{
+	color: red;
+}
+.direita_comp{
+	float: right;
+}
+.esconde{
+	display: none;
+}

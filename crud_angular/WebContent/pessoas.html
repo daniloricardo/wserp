@@ -1,0 +1,26 @@
+
+			<table class="table table-striped">
+				<tr>
+					<th>Codigo Pessoa</th>
+					<th>Nome Pessoa</th>
+					<th>Nome Fantasia</th>
+					<th>CPF/CNPJ</th>
+					<th>Bairro</th>
+					<th>Cidade</th>
+					<th>UF</th>
+				</tr>
+				<tr dir-paginate="pessoa in pessoas|filter:procurar|orderBy:sortKey:reverse|itemsPerPage:10">
+					<td><a href="#/edit/{{pessoa.id}}">{{pessoa.codigo}}</a></td>
+					<td>{{pessoa.nome}}</td>
+					<td>{{pessoa.nmfantasia}}</td>
+					<td>{{pessoa.cpfcnpj}}</td>
+					<td>{{pessoa.endereco.bairro.nome}}</td>
+					<td>{{pessoa.endereco.cidade.nome}}</td>
+					<td>{{pessoa.endereco.cidade.iduf}}</td>
+				</tr>
+			</table>
+			<dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
+			<p>Total Pessoas: {{pessoas.length}}</p>
+
+
+
