@@ -1,0 +1,49 @@
+package nelsys.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import nelsys.model.Pessoa;
+import nelsys.repository.PessoaRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PessoaController {
+	
+	@Autowired
+	PessoaRepository pessoaRepository;
+	
+	@RequestMapping(value="pessoas",method = RequestMethod.POST)
+	ResponseEntity<Pessoa> add(@RequestBody Pessoa input,
+			HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept");
+		System.out.println(input.getNome());
+		return new ResponseEntity<Pessoa>(input, HttpStatus.CREATED);
+	}
+	@RequestMapping(value="pessoas",method = RequestMethod.GET, produces= org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody List<Pessoa> funcionarioAllRest(HttpServletResponse response){
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept");
+		return pessoaRepository.findAll();	
+	}
+	@RequestMapping(value="pessoas/{id}",method = {RequestMethod.GET, RequestMethod.POST}, produces= org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Pessoa funcionarioAllRest(HttpServletResponse response,@PathVariable String id,HttpServletRequest request){
+		
+		System.out.println(request.getMethod());
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Headers", "Origin, X-Request-Width, Content-Type, Accept");
+		return pessoaRepository.findById(id);	
+	}
+}
